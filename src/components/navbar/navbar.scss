@@ -1,0 +1,171 @@
+@import "../../styles/responsive.scss";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+  a {
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      img {
+        width: 28px;
+      }
+
+      @include md {
+        span {
+          display: none;
+        }
+      }
+      @include sm {
+        span {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    // gap: 50px;
+    background-color: #fff5f5;
+    height: 100%;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-weight: 600;
+
+      .userContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          border-radius: 50%;
+        }
+
+        @include sm {
+          img {
+            margin-right: 50px;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+
+      .profileBtn {
+        background-color: #fcc419;
+        color: #fff9db;
+        position: relative;
+
+        .notification {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background-color: #fa5252;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    a {
+      padding: 12px 24px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    .register {
+      background-color: #ff6b6b;
+      color: #fff5f5;
+
+      &:hover {
+        text-decoration: none;
+        background-color: #fa5252;
+      }
+    }
+
+    .menuIcon {
+      display: none;
+      z-index: 9999;
+
+      img {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+      }
+
+      @include sm {
+        display: initial;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background: #ff6b6b;
+      color: #fff;
+      height: 100vh;
+      width: 50%;
+      //
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease;
+
+      &.active {
+        right: 0;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: 0.75px;
+        }
+      }
+    }
+
+    @include md {
+      background: transparent;
+    }
+  }
+}
